@@ -1,0 +1,16 @@
+  204  git push
+  205  rm oops2.txt
+  206  ls
+  207  git add oops2.txt
+  208  git commit -m 'removing oops2'
+  209  git push
+  210  vi never.txt
+  211  git add never.txt
+  212  git reset never.txt
+  213  man rm
+  214  ls
+  215  mkdir files
+  216  ls
+  217  rm -d files
+  218  ls
+  219  man cp
