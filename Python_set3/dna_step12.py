@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+dna_test = 'GATGGGATTggggttttccccTCCCATGTGCTCAAGACTGGCGCTaaaaGttttGAGCTTCTCaaaaGTCTAGAGCCACCGTCCAGGGAGCAGGTAGCTGCTGGGCTCCggggACACTTTGCGTTCGGGCTGGGAGCGTGCTTTCCACGACGGTGACACGCTTCCCTGGATTGGCAGCCAGACTGCCTTCCGGGTCACTGCCATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGccccCTCTGAGTCAGGAAACAttttCAGACCTATGGAAACTACTTCCTGaaaaCAACGTTCTGTccccCTTGCCGTCCCAAGCAATGGATGATTTGATGCTGTccccGGACGATATTGAACAATGGTTCACTGAAGACCCAGGTCCAGATGAAGCTCCCAGAATTCGCCAGAGGCTGCTccccCCGTGGccccTGCACCAGCAGCTCCTACACCGGCGGccccTGCACCAGccccCTCCTGGccccTGTCATCTTCTGTCCCTTCCCAGaaaaCCTACCAGGGCAGCTACGGTTTCCGTCTGGGCTTCTTGCATTCTGGGACAGCCAAGTCTGTGACTTGCACGTACTccccTGCCCTCAACAAGATGttttGCCAACTGGCCAAGACCTGCCCTGTGCAGCTGTGGGTTGATTCCACAccccCGCCCGGCACCCGCGTCCGCGCCATGGCCATCTACAAGCAGTCACAGCACATGACGGAGGTTGTGAGGCGCTGccccCACCATGAGCGCT'
+#create variable of dna
+
+#fix case of dna to make upper case
+countable_dna = dna_test.upper()
+
+#extract substring
+sub_dna = countable_dna[99:200]
+
+#count each nucleotide
+number_of_As = sub_dna.count('A')
+number_of_Ts = sub_dna.count('T')
+number_of_Gs = sub_dna.count('G')
+number_of_Cs = sub_dna.count('C')
+#add As and Ts, Gs and Cs
+gc = number_of_Gs + number_of_Cs
+at = number_of_As + number_of_Ts
+# calc gc content
+gc_content = (gc/(at+gc))
+at_content = (at/(at+gc))
+
+print(f'The GC content of the slice is {gc_content:.1%} and the AT content is {at_content:.1%}.')
