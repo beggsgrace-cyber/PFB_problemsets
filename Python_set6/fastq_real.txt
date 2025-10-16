@@ -1,0 +1,6 @@
+Lines: 120
+sequences: 30.0
+characters: 7800
+nucleotides: 3030
+average line length: 65.0
+average seq lenght: 101.0

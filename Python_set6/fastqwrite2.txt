@@ -2,3 +2,5 @@ Lines: 8
 sequences: 2.0
 characters: 38
 nucleotides: 12
+average line length: 4.75
+average seq lenght: 6.0
