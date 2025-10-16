@@ -1,0 +1,2 @@
+seqtest	AATTGGCC
+
