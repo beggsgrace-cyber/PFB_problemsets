@@ -1,4 +1,4 @@
 Lines: 8
 sequences: 2.0
 characters: 38
-nucleotides: 6
+nucleotides: 12
