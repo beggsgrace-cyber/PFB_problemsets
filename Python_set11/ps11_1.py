@@ -23,18 +23,30 @@ class DNArecord(object):
         C_count = self.sequence.count('C')
         nts = {'A':A_count, 'T':T_count, 'G':G_count, 'C':C_count}
         return nts
-        
+    def GC_content(self): #calculate GC content
+        length2 = len(self.sequence)
+        G_count = self.sequence.count('G')
+        C_count = self.sequence.count('C')
+        GC_fraction = (G_count + C_count)/length2
+        return GC_fraction
+    def fastaf(self):
+        formatting = (f'>{self.gene_name} {self.organism} \n{self.sequence}')
+        return formatting
 
 #create DNArecord object with user defined data
 dna_rec1 = DNArecord('AGCGGTTAGTCAAAAAAA', 'COX1', 'Homo sapiens')
-print(type(dna_rec1))
+#print(type(dna_rec1))
 
 #play with new object in this new class
 seq = dna_rec1.sequence
 gene = dna_rec1.gene_name
 org = dna_rec1.organism
-print(f'For dna_rec1, here is the sequence: {seq}, gene name: {gene} and organism: {org}')
+#print(f'For dna_rec1, here is the sequence: {seq}, gene name: {gene} and organism: {org}')
 length1 = dna_rec1.seq_length()
-print(length1)
+#print(length1)
 nts = dna_rec1.nt_comp()
-print(nts)
+#print(nts)
+gc = dna_rec1.GC_content()
+#print(gc)
+fasta = dna_rec1.fastaf()
+print(fasta)
