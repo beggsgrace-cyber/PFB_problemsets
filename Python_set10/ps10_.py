@@ -10,7 +10,7 @@ def ntn(dna, width):
         block = match.group(0)
         new_dna += block + "\n"
     return new_dna
-print(ntn(dna, width))
+#print(ntn(dna, width))
 
 #for dna string that does or does not have new lines, user cannot input new width (only feed dna) but does not include last bit of DNA that doesn't go up to 60 nts!
 def nt60n(dna):
@@ -22,16 +22,17 @@ def nt60n(dna):
     return new_dna
 #print(nt60n(dna))
 
-#this is not working --> figure out how to do this with re.sub()
+#this works now!!! can print 60 nts at a time including last bit!
 def nt60n_better(dna):
-    new_dna = ''
-    for match in re.finditer(r'\S{1,60}', dna):
-        block = match.group(0)
-        block = block.strip()
-       # print(block)
-        new_dna += block + "\n"
-    return new_dna
-#print(nt60n_better(dna))
+   # new_dna = ''
+    cut_dna = []
+    new_dna = dna.replace('\n', '')
+    for nt in range(0, len(new_dna), 60):
+        cut_dna.append(new_dna[nt:nt+60])
+    formatted_dna = ('\n'.join(cut_dna))
+    return formatted_dna
+print(nt60n_better(dna))
+
 
 # #take dna string and max length of each line
 # def ntn(dna, width):
